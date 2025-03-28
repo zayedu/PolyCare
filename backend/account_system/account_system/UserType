@@ -1,0 +1,20 @@
+'''
+There are three types of users that will be using this app. 
+The categories are defined below:
+
+1: Patient: The person who will be using the app for the purposes of determining 
+the likelihood of having PCOS.
+
+2: Physician: The doctor(s) that may use the patient's likelihood calculation
+to assist in determining next steps in the patient's care.
+
+3: HCN: The healthcare providers that may find the calculation helpful in 
+navigating the patient's health journey
+'''
+
+from enum import Enum
+
+class UserType(Enum):
+    Patient = 1
+    Physician = 2
+    HCN = 3
