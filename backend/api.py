@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from results_viewer_service import ResultsViewerService
 
 app = Flask(__name__)
 
@@ -15,6 +16,16 @@ def index2():
     data = request.get_json()
     print(data)
     return data
+
+@app.route("/api/getResults", methods=["GET"])
+def get_results():
+    """
+    Returns the four scores, plus recommendation and lifestyle tips, in JSON format.
+    If no results exist, returns {"success": False, "message": "No results found"}.
+    """
+    rvs = ResultsViewerService()
+    results_data = rvs.get_results_and_recommendation()
+    return jsonify(results_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
