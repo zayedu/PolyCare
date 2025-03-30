@@ -1,5 +1,5 @@
 from auth import Account
-import openpyxl
+import csv
 
 class AccountLogin(Account):
 
@@ -15,7 +15,8 @@ class AccountLogin(Account):
         '''
         super().__init__(loginID, password)
     
-    def find_login_credentials(loginID):
+    #not needed
+    #def login_credentials_check(loginID):
         '''
         Description: This method checks for login credentials in the
         Account Database.
@@ -29,18 +30,9 @@ class AccountLogin(Account):
 
         Returns: password OR NA
         '''
-        page = Account.accdb.active
-        '''Assuming that the first column(column A) is loginID. If not:
-        for col in page.iter_cols(values_only = False):
-            if col.value() == 'loginID' (the column that contains loginIDs)
-            break'
-        '''
-        for row in page.iter_rows(values_only = True):
-            if row[0] == loginID:               #username
-                return row[1]                   #password
-        else: 
-            return 'loginID not found'
-        
+      #  accdb = 'Data.csv'
+       # with open (accdb, 'r') as accdb:
+        #    row = ()
         
 
 
