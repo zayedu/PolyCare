@@ -4,13 +4,6 @@ class OverallCalculation:
         self.symptom_weight = symptom_weight
         self.blood_test_weight = blood_test_weight
         self.ultrasound_weight = ultrasound_weight
-        self.symptom_calculation = symptomCalculation()
-        self.blood_test_calculation = bloodTestCalculation()
-        self.ultrasound_calculation = ultrasoundCalculation()
-
-    def calculate_overall_probability(self, symp_calc, bt_calc, us_calc):
-        return (symp_calc.get_result() * self.symptom_weight + bt_calc.get_result() * self.blood_test_weight + us_calc.get_result() * self.ultrasound_weight)
-
-    def get_results(self):
-        overall_percentage = self.calculate_overall_probability(self.symptom_calculation, self.blood_test_calculation, self.ultrasound_calculation)
-        return [overall_percentage, self.symptom_calculation.get_result(), self.blood_test_calculation.get_result(), self.ultrasound_calculation.get_result()]
+    
+    def calculate_overall_probability(self, symptom_likelihood, blood_test_likelihood, ultrasound_likelihood):
+        return ((symptom_likelihood * self.symptom_weight) + (blood_test_likelihood * self.blood_test_weight) + (ultrasound_likelihood * self.ultrasound_weight))
