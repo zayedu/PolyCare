@@ -28,14 +28,15 @@ export default function SymptomUploadScreen(){
         
         try {
             await fetch(
-                'http://127.0.0.1:5000/post', {
+                'http://127.0.0.1:5000/SymptomUploadResults', {
                     method: 'POST',
                     headers : {'Content-Type': 'application/json', Accept : 'application/json'},
                     body: JSON.stringify({response: listOfSymptoms}
                     ),
                 })
                 .then(response => {
-                    response.json()
+                    response.json() 
+                    console.log(response)
                 })
         }
         catch (error) {
