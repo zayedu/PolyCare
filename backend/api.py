@@ -4,7 +4,6 @@ from flask_cors import CORS
 from uploadResults.discussSymptoms import discussSymptoms
 
 app = Flask(__name__)
-
 CORS(app, resources={r'/*': {'origins': '*'}})
 
 @app.route('/', methods=['GET'])
