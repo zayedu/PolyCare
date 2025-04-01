@@ -2,7 +2,7 @@
 
 from flask import json
 from calculateResults.symptomCalculation import symptomCalculation
-from uploadResults.discussSymptoms import discussSymptoms
+from backend.uploadResults.discussSymptoms import discussSymptoms
 
 # Test to upload data into uploadData.csv
 discussSymptoms(json.dumps({"test": "random data input"})).uploadUserSymptom()

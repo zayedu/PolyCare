@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from uploadResults.discussUltrasound import discussUltrasound
-from uploadResults.discussSymptoms import discussSymptoms
+from backend.uploadResults.discussSymptoms import discussSymptoms
 
 app = Flask(__name__)
 CORS(app, resources={r'/*': {'origins': '*'}})
