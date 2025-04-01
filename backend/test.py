@@ -2,18 +2,18 @@
 
 from flask import json
 from calculateResults.symptomCalculation import symptomCalculation
-from backend.uploadResults.discussSymptoms import discussSymptoms
-from backend.uploadResults.discussUltrasound import discussUltrasound
 from calculateResults.UltrasoundCalculation import UltrasoundCalculation
 
+#from calculateResults.UltrasoundCalculation import UltrasoundCalculation
+
 # Test to upload data into uploadData.csv
-discussSymptoms(json.dumps({"test": "random data input"})).uploadUserSymptom()
+# discussSymptoms(json.dumps({'response': ['Yes a lot', 'Yes everywhere', 'Oily skin always', 'Yes it is very hard', 'Kind of']})).uploadUserSymptom()
 
 # Test to retreive data from uploadData.csv
-print(symptomCalculation().getUserSymptoms())
+#print(symptomCalculation().getUserSymptoms())
 
 # Test for calculating PCOS based off data stored in uploadData.csv
-print("Probablity: ",symptomCalculation().calculatePCOSFromSymptom())
+#print("Probablity: ",symptomCalculation().calculatePCOSFromSymptom())
 
 # assume image stored in db already
 ultrasoundCalculation = UltrasoundCalculation()

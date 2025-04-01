@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a245e21c-5acc-413e-b092-517059896722" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/UltrasoundAnalyzer/train_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/UltrasoundAnalyzer/ultrasound_pcos_model.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/calculateResults/ultrasoundCalculation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploadResults/discussSymptoms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/uploadResults/discussSymptoms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/app/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/app/HomeScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/app/SymptomUploadScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/app/SymptomUploadScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/app/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,26 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flask server.Flask (backend/UltrasoundAnalyzer/app.py).executor": "Run",
-    "Flask server.PolyCare.executor": "Run",
-    "Python.api.executor": "Run",
-    "Python.compat.executor": "Run",
-    "Python.predict.executor": "Run",
-    "Python.train_model.executor": "Run",
-    "Python.ultrasoundCalculation.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ultrasound",
-    "last_opened_file_path": "/Users/zayedumer/Documents/Personal-Projects/PolyCare/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flask server.Flask (backend/UltrasoundAnalyzer/app.py).executor&quot;: &quot;Run&quot;,
+    &quot;Flask server.PolyCare.executor&quot;: &quot;Run&quot;,
+    &quot;Python.api.executor&quot;: &quot;Run&quot;,
+    &quot;Python.compat.executor&quot;: &quot;Run&quot;,
+    &quot;Python.predict.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ultrasoundCalculation.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging ultrasound&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zayedumer/Documents/Personal-Projects/PolyCare/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/zayedumer/Documents/Personal-Projects/PolyCare/pcos-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend" />
@@ -115,11 +116,13 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PolyCare$ultrasoundCalculation.coverage" NAME="ultrasoundCalculation Coverage Results" MODIFIED="1743471839893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/calculateResults" />
+    <SUITE FILE_PATH="coverage/PolyCare$ultrasoundCalculation.coverage" NAME="ultrasoundCalculation Coverage Results" MODIFIED="1743478380552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/calculateResults" />
     <SUITE FILE_PATH="coverage/PolyCare$Flask__backend_UltrasoundAnalyzer_app_py_.coverage" NAME="Flask (backend/UltrasoundAnalyzer/app.py) Coverage Results" MODIFIED="1743105638572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/PolyCare$api.coverage" NAME="api Coverage Results" MODIFIED="1743470736024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/PolyCare$api.coverage" NAME="api Coverage Results" MODIFIED="1743478610312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/PolyCare$compat.coverage" NAME="compat Coverage Results" MODIFIED="1743023344702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/tensorflow/python/util" />
     <SUITE FILE_PATH="coverage/PolyCare$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1743471157164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/UltrasoundAnalyzer" />
+    <SUITE FILE_PATH="coverage/PolyCare$discussUltrasound.coverage" NAME="discussUltrasound Coverage Results" MODIFIED="1743478717125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/uploadResults" />
     <SUITE FILE_PATH="coverage/PolyCare$predict.coverage" NAME="predict Coverage Results" MODIFIED="1743024897839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/UltrasoundAnalyzer" />
+    <SUITE FILE_PATH="coverage/PolyCare$UltrasoundCalculation.coverage" NAME="UltrasoundCalculation Coverage Results" MODIFIED="1743478739635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/calculateResults" />
   </component>
 </project>

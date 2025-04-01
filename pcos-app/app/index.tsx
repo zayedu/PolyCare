@@ -3,17 +3,27 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import SymptomUploadScreen from "./SymptomUploadScreen";
 import UltrasoundUploadScreen from "./UltrasoundUploadScreen";
+
 import HomeScreen from "./HomeScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function Index() {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="SymptomUpload" component={SymptomUploadScreen} />
+    <Stack.Navigator initialRouteName="PCOS Home Page">
       <Stack.Screen
-        name="UltrasoundUpload"
+        name="PCOS Home Page"
+        options={{ headerTitleAlign: "center" }}
+        component={HomeScreen}
+      />
+      <Stack.Screen
+        name="Symptom Upload Page"
+        options={{ headerTitleAlign: "center" }}
+        component={SymptomUploadScreen}
+      />
+      <Stack.Screen
+        name="Ultrasound Upload Page"
+        options={{ headerTitleAlign: "center" }}
         component={UltrasoundUploadScreen}
       />
     </Stack.Navigator>
