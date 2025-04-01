@@ -10,9 +10,6 @@ export default function Index() {
   
   return (
       <Stack.Navigator initialRouteName="PCOS Home Page"
-        // screenOptions={{
-        //   headerShown: false
-        // }}
         >
         <Stack.Screen
           name="PCOS Home Page"
