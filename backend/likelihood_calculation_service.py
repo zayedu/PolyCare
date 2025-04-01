@@ -1,5 +1,6 @@
 import pandas as pd
 from pathlib import Path
+from calculateResults import symptomCalculation
 
 class LikelihoodCalculationService:
     
@@ -11,7 +12,7 @@ class LikelihoodCalculationService:
 
     def get_symptoms_score(self):
         # Retrieve the calculated symptom percentage from symptomCalculation
-        return self.symp_calc.get_result()
+        return self.symp_calc.calculatePCOSFromSymptom()
 
     def get_blood_test_score(self):
         # Retrieve the calculated blood test percentage from bloodTestCalculation
