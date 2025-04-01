@@ -9,7 +9,7 @@ from PIL import Image
 import pandas as pd
 from pathlib import Path
 import base64
-class ultrasoundCalculation:
+class UltrasoundCalculation:
     def __init__(self, target_size=(224, 224)):
         """
         Initialize the calculator by setting the target image size and loading the model.
@@ -78,4 +78,6 @@ class ultrasoundCalculation:
         os.remove(temp_path)
         return result
 
-
+ultrasound_calc = UltrasoundCalculation()
+result = ultrasound_calc.predict()
+print(f"PCOS likelihood: {result:.2f}%")
