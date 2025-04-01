@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-
+from uploadResults.discussUltrasound import discussUltrasound
 from uploadResults.discussSymptoms import discussSymptoms
 
 app = Flask(__name__)
@@ -17,7 +17,15 @@ def SymptomUploadResults():
     incomingReq = request.get_json()
     uploadsymptoms = discussSymptoms(incomingReq).uploadUserSymptom()
 
-    return uploadsymptoms 
+    return uploadsymptoms
+
+@app.route('/UltrasoundAnalyzer/UploadResults', methods=['POST'])
+def UltrasoundUploadResults():
+
+    uploadUltrasound = discussUltrasound(request).uploadUltrasound()
+
+
+    return uploadUltrasound
 
 if __name__ == "__main__":
     app.run(debug=True)

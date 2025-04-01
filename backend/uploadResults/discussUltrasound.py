@@ -1,7 +1,9 @@
 from flask import json
-import csv
+import pandas as pd
+import base64
 
-class discussSymptoms():
+
+class discussUltrasound():
     """
     Description: Initializes 'discuss symptoms' instance
     Args: Incoming upload symptom's post request as a json
@@ -10,32 +12,47 @@ class discussSymptoms():
     Returns: NA
     """
     def __init__(self, incomingReq:json):
-        self.incomingReq = incomingReq
+        self.image = incomingReq.files['image']
 
-    def uploadUserSymptom(self):
+    def uploadUltrasound(self):
         """
-        Description: Upload's user symptom to data base
+        Description: Uploads user's symptom to the database.
         Args: None
         Requires: N/A
         Modifies: uploadedData.csv
-        Returns: success message as a json response to front end
+        Returns: success/error message as a JSON response to the front end.
         """
+        try:
+            # Load the CSV file
+            csv_path = 'data/uploadedData.csv'
+            df = pd.read_csv(csv_path)
 
-        # Get symptoms as a list from request
-        sampleData = self.parseRequest(incomingReq=self.incomingReq)
+            # Ensure there's at least one row to modify
+            if df.empty:
+                return json.dumps({"error": "CSV file is empty. Cannot update data."})
 
-        # Currently hard coded to append data to uploadedData.csv
-        # NOTE: Expect first row of uploadedData.csv to be column names
-        # NOTE: Expect second row of uploadedData.csv to be blank line to write in row
-        # NOTE: After running this method, will need to clear uploadedData.csv to above expectations
-        with open('data/uploadedData.csv', 'a') as csvfile:
-            writer = csv.writer(csvfile, delimiter=",")
-            writer.writerow(sampleData)
+            # Read and encode the image
+            image_bytes = self.image.read()
+            encoded_string = base64.b64encode(image_bytes).decode("utf-8")
 
-        # After uploading data, create a message to notify front end (user)
-        message = json.dumps({"response": "Succesfully uploaded data"})
+            # Update the first row of the 'Ultrasound Image' column
+            df.at[0, 'Ultrasound Image'] = encoded_string
 
-        return message
+            # Save the updated CSV
+            df.to_csv(csv_path, index=False)
+
+            # Success message
+            message = json.dumps({"response": "Successfully uploaded data"})
+            return message
+
+        except FileNotFoundError:
+            return json.dumps({"error": "CSV file not found. Ensure 'uploadedData.csv' exists."})
+
+        except KeyError:
+            return json.dumps({"error": "CSV file does not contain the 'Ultrasound Image' column."})
+
+        except Exception as e:
+            return json.dumps({"error": f"An unexpected error occurred: {str(e)}"})
 
     def parseRequest(self, incomingReq:json):
         """
