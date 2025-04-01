@@ -45,11 +45,10 @@ class discussSymptoms():
         Modifies: N/A
         Returns: 5 Symptoms inputted from user as a list
         """
-        print("Symptom upload request: ", self.incomingReq)
-        sampleData =[]
 
-        # TODO: actually parse request data into an array
-        sampleData = ['Yes a lot', 'Only a bit in the back', 'Yes acne has been there and not going away', 'Have witnessed unexpected weight gain', 'Yes very much']
-
+        # Parse request data into an array
+        sampleData = incomingReq['response']
+        print(sampleData)
+        
         return sampleData
     

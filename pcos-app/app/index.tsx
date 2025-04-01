@@ -9,13 +9,16 @@ const Stack = createNativeStackNavigator();
 export default function Index() {
   
   return (
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="PCOS Home Page"
+        >
         <Stack.Screen
-          name="Home"
+          name="PCOS Home Page"
+          options={{headerTitleAlign: 'center'}}
           component={HomeScreen}
         />
         <Stack.Screen
-          name="SymptomUpload"
+          name="Symptom Upload Page"
+          options={{headerTitleAlign: 'center'}}
           component={SymptomUploadScreen}
         />
       </Stack.Navigator>
