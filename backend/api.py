@@ -23,8 +23,6 @@ def SymptomUploadResults():
 def UltrasoundUploadResults():
 
     uploadUltrasound = discussUltrasound(request).uploadUltrasound()
-
-
     return uploadUltrasound
 
 if __name__ == "__main__":
