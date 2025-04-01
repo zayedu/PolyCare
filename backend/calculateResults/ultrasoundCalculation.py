@@ -9,7 +9,7 @@ from PIL import Image
 import pandas as pd
 from pathlib import Path
 import base64
-class ultrasoundCalculator:
+class ultrasoundCalculation:
     def __init__(self, target_size=(224, 224)):
         """
         Initialize the calculator by setting the target image size and loading the model.
