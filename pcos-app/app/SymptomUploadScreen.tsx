@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Text, TextInput, Button, Alert } from "react-native";
+import { View, Text, TextInput, Button } from "react-native";
 
 export default function SymptomUploadScreen(){
     const [q1text, setq1Text] = useState('');
@@ -7,7 +7,6 @@ export default function SymptomUploadScreen(){
     const [q3text, setq3Text] = useState('');
     const [q4text, setq4Text] = useState('');
     const [q5text, setq5Text] = useState('');
-    // const [text, setText] = useState('');
 
     const saveData = async ()=>{
         
@@ -46,37 +45,37 @@ export default function SymptomUploadScreen(){
 
     return (
         <View >
-            <Text>Question 1: Have you noticed any irregularities in your menstrual cycle, such as infrequent periods, missed periods, or periods that are unusually heavy or light?</Text>
+            <Text style={{borderTopWidth:5}}>Question 1: Have you noticed any irregularities in your menstrual cycle, such as infrequent periods, missed periods, or periods that are unusually heavy or light?</Text>
             <TextInput
-                style={{height: 40, padding: 5}}
+                style={{height: 40, padding: 5,  borderTopWidth:1, borderBottomWidth:5, borderColor:'black', marginBottom:5}}
                 placeholder="Answer here..."
                 onChangeText={newTextq1 => setq1Text(newTextq1)}
                 defaultValue={q1text}
             />
-            <Text>Question 2: Have you experienced excessive hair growth in areas such as your face, chest, back, or abdomen?</Text>
+            <Text style={{borderTopWidth:5, marginTop:20}}>Question 2: Have you experienced excessive hair growth in areas such as your face, chest, back, or abdomen?</Text>
             <TextInput
-                style={{height: 40, padding: 5}}
+                style={{height: 40, padding: 5,  borderTopWidth:1, borderBottomWidth:5, borderColor:'black', marginBottom:5}}
                 placeholder="Answer here..."
                 onChangeText={newTextq2 => setq2Text(newTextq2)}
                 defaultValue={q2text}
             />
-            <Text>Question 3: Have you been struggling with persistent acne or unusually oily skin?</Text>
+            <Text style={{borderTopWidth:5, marginTop:20}}>Question 3: Have you been struggling with persistent acne or unusually oily skin?</Text>
             <TextInput
-                style={{height: 40, padding: 5}}
+                style={{height: 40, padding: 5,  borderTopWidth:1, borderBottomWidth:5, borderColor:'black', marginBottom:5}}
                 placeholder="Answer here..."
                 onChangeText={newTextq3 => setq3Text(newTextq3)}
                 defaultValue={q3text}
             />
-            <Text>Question 4: Have you noticed unexplained weight gain or found it difficult to lose weight despite diet and exercise?</Text>
+            <Text style={{borderTopWidth:5, marginTop:20}}>Question 4: Have you noticed unexplained weight gain or found it difficult to lose weight despite diet and exercise?</Text>
             <TextInput
-                style={{height: 40, padding: 5}}
+                style={{height: 40, padding: 5,  borderTopWidth:1, borderBottomWidth:5, borderColor:'black', marginBottom:5}}
                 placeholder="Answer here..."
                 onChangeText={newTextq4 => setq4Text(newTextq4)}
                 defaultValue={q4text}
             />
-            <Text>Question 5: Hair Loss or Thinning**:  \n   *"Have you experienced hair thinning or hair loss, particularly on the scalp?</Text>
+            <Text style={{borderTopWidth:5, marginTop:20}}>Question 5: Have you experienced hair thinning or hair loss, particularly on the scalp?</Text>
             <TextInput
-                style={{height: 40, padding: 5}}
+                style={{height: 40, padding: 5,  borderTopWidth:1, borderBottomWidth:5, borderColor:'black', marginBottom:10}}
                 placeholder="Answer here..."
                 onChangeText={newTextq5 => setq5Text(newTextq5)}
                 defaultValue={q5text}
