@@ -155,8 +155,8 @@ def main():
     print(f"Test Accuracy: {test_acc:.4f}, Test Loss: {test_loss:.4f}")
 
     # Save the trained model; this architecture is much smaller, so the h5 file will be well under 100MB.
-    model.save("ultrasound_pcos_model.h5")
-    print("Model saved to ultrasound_pcos_model.h5")
+    model.save('ultrasound_pcos_model.keras')
+    print("Model saved to ultrasound_pcos_model.keras")
 
 if __name__ == '__main__':
     start = time.time()
