@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import SymptomUploadScreen from './SymptomUploadScreen';
 import HomeScreen from './HomeScreen';
+import BloodUploadScreen from './BloodUploadScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,11 @@ export default function Index() {
           name="Symptom Upload Page"
           options={{headerTitleAlign: 'center'}}
           component={SymptomUploadScreen}
+        />
+        <Stack.Screen
+          name="BloodUpload"
+          options={{headerTitleAlign: 'center'}}
+          component={BloodUploadScreen}
         />
       </Stack.Navigator>
   );
