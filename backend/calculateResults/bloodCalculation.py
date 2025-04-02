@@ -42,12 +42,13 @@ class bloodCalculation():
         return riskTotal
 
     def runProbability(self):
-        print("User Blood Test Input:")
-        print(f"- Glucose: {self.userBloodTest['glucose']} mmol/L")
-        print(f"- Testosterone: {self.userBloodTest['testosterone']} ng/dL")
-        print(f"- Bile Salts: {self.userBloodTest['bileSalts']} mmol/L")
+        # print("User Blood Test Input:")
+        # print(f"- Glucose: {self.userBloodTest['glucose']} mmol/L")
+        # print(f"- Testosterone: {self.userBloodTest['testosterone']} ng/dL")
+        # print(f"- Bile Salts: {self.userBloodTest['bileSalts']} mmol/L")
 
         riskScore = self.calculatePCOSfromBT()
         print(f"\nPCOS Probability: {riskScore}%")
+        return riskScore
 
     
