@@ -42,14 +42,18 @@ class discussBloodTest():
         Returns: 5 Symptoms inputted from user as a list
         """
 
-        
         # Parse request data into an array
+        
         glucose = incomingReq['glucose']
         testosterone = incomingReq['testosterone']
         bileSalts = incomingReq['bileSalts']
 
-        print("Parsed Blood Test Data is as Follows: ", [glucose, testosterone, bileSalts])
-        return ["", "", "", "", "", glucose, testosterone, bileSalts]
+        sampleData = ["", "", "", "", "", glucose, testosterone, bileSalts, ""]
+        print(sampleData)
+        return sampleData
+    
+        
+        # return ["", "", "", "", "", glucose, testosterone, bileSalts, ""]
 
 
     
