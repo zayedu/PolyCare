@@ -13,13 +13,14 @@ class UltrasoundCalculation:
     def __init__(self, target_size=(224, 224)):
         """
         Initialize the calculator by setting the target image size and loading the model.
-        The model file 'ultrasound_pcos_model.h5' must be in the same directory as this script.
+        The model file 'ultrasound_pcos_model.keras' must be in the same directory as this script.
         """
         self.target_size = target_size
-        self.model_path = Path(__file__).parent.parent / "UltrasoundAnalyzer/ultrasound_pcos_model.h5"
+        self.model_path = Path(__file__).parent.parent / "UltrasoundAnalyzer/ultrasound_pcos_model.keras"
         if not os.path.exists(self.model_path):
             raise FileNotFoundError(f"Model file not found at: {self.model_path}")
         self.model = tf.keras.models.load_model(self.model_path)
+
 
     def load_and_preprocess_image(self, image_path):
         """
