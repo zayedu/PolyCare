@@ -17,7 +17,7 @@ class discussBloodTest():
         Returns: success message as a json response to front end
         """
 
-        # Get symptoms as a list from request
+        # Get blood test results as a list from request
         bloodTestData = self.parseRequest(self.incomingReq)
 
         # Currently hard coded to append data to uploadedData.csv
@@ -34,13 +34,6 @@ class discussBloodTest():
         return message
     
     def parseRequest(self, incomingReq:json):
-        """
-        Description: Parse's incoming request to get list of symptoms from user
-        Args: incomingReq:json
-        Requires: N/A
-        Modifies: N/A
-        Returns: 5 Symptoms inputted from user as a list
-        """
 
         # Parse request data into an array
         
@@ -51,9 +44,6 @@ class discussBloodTest():
         sampleData = ["", "", "", "", "", glucose, testosterone, bileSalts, ""]
         print(sampleData)
         return sampleData
-    
-        
-        # return ["", "", "", "", "", glucose, testosterone, bileSalts, ""]
 
 
     
