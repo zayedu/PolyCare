@@ -1,5 +1,16 @@
 import { View, Text, Button } from "react-native";
 
+<<<<<<< HEAD
+export default function HomeScreen( {navigation}: {navigation: any} ){
+    return (
+        <View >
+            <Text>Home Screen</Text>
+            <Button title="Upload Symptom Results" onPress={() => navigation.navigate("SymptomUpload")} />
+            <Button title="Upload Blood Test Results" onPress = {() => navigation.navigate("BloodUpload")} />
+        </View>
+    )
+}
+=======
 export default function HomeScreen({ navigation }: { navigation: any }) {
   return (
     <View style={{ flex: 1, marginTop: 20, marginBottom: 20 }}>
@@ -14,3 +25,4 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
     </View>
   );
 }
+>>>>>>> main

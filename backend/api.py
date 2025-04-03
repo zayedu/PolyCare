@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request, make_response
 from flask_cors import CORS, cross_origin
 from uploadResults.discussUltrasound import discussUltrasound
 from uploadResults.discussSymptoms import discussSymptoms
+from uploadResults.discussBloodTest import discussBloodTest
 
 app = Flask(__name__)
 CORS(app, resources={r'/*': {'origins': '*'}})
@@ -30,6 +31,14 @@ def UltrasoundUploadResults():
     response = make_response(result)
     response.headers["Content-Type"] = "application/json"
     return response
+
+@app.route('/BloodTestUploadResults', methods=['POST'])
+def BloodTestUploadResults():
+
+    incomingReq = request.get_json()
+    uploadblood = discussBloodTest(incomingReq).uploadUserBloodTest()
+
+    return uploadblood
 
 if __name__ == "__main__":
     app.run(debug=True)
