@@ -12,7 +12,7 @@ export default function BloodUploadScreen(){
         
         try {
             await fetch(
-                'http://172.20.10.2:5000/BloodTestUploadResults', {
+                'http://127.0.0.1:5000/BloodTestUploadResults', {
                     method: 'POST',
                     headers : {'Content-Type': 'application/json', Accept : 'application/json'},
                     body: JSON.stringify({glucose: parseFloat(glucose), testosterone: parseFloat(testosterone), bileSalts: parseFloat(bileSalts)}
