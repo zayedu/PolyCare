@@ -1,4 +1,4 @@
-from auth import Account
+from account_system.account_system.auth import Account
 import csv
 
 class AccountLogin(Account):
@@ -14,7 +14,7 @@ class AccountLogin(Account):
         Returns: NA      
         '''
         super().__init__(loginID)
-        self.datapath = "./backend/account_system/account_system/Data.csv"
+        self.datapath = "account_system/account_system/Data.csv"
         self.password = password
 
     def login(self) -> bool:

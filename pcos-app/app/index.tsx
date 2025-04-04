@@ -5,12 +5,18 @@ import UltrasoundUploadScreen from "./UltrasoundUploadScreen";
 import BloodUploadScreen from './BloodUploadScreen';
 import HomeScreen from "./HomeScreen";
 import ResultsViewerScreen from "./ResultsViewerServiceScreen";
+import LoginScreen from "./LoginScreen"
 
 const Stack = createNativeStackNavigator();
 
 export default function Index() {
   return (
-    <Stack.Navigator initialRouteName="PCOS Home Page">
+    <Stack.Navigator initialRouteName="Login Page">
+      <Stack.Screen
+        name="Login Page"
+        options={{ headerTitleAlign: "center" }}
+        component={LoginScreen}
+      />
       <Stack.Screen
         name="PCOS Home Page"
         options={{ headerTitleAlign: "center" }}

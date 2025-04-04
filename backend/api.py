@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, make_response
 from flask_cors import CORS, cross_origin
+from account_system.account_system.account_login import AccountLogin
 from uploadResults.discussUltrasound import discussUltrasound
 from uploadResults.discussSymptoms import discussSymptoms
 from uploadResults.discussBloodTest import discussBloodTest
@@ -69,6 +70,17 @@ def get_results():
     rvs = ResultsViewerService()
     results_data = rvs.get_results_and_recommendation()
     return jsonify(results_data)
+
+@app.route('/LoginAttempt', methods=['POST'])
+@cross_origin()
+def LoginAttempt():
+
+    # Validate credentials 
+    user = AccountLogin('Sfwre12', '3rdYear!')
+    result = user.login()
+    
+    message = {"Test": result}
+    return message
 
 if __name__ == "__main__":
     app.run(debug=True)

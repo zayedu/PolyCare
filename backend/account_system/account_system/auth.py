@@ -1,7 +1,6 @@
 from abc import ABC
 import bcrypt
 import csv
-import UserType
 
 
 #connect to front end for input id and password
