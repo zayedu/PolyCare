@@ -1,16 +1,20 @@
 from abc import ABC
 import bcrypt
 import csv
+import UserType
+
 
 #connect to front end for input id and password
 #retest for clarity
 
 class Account(ABC):
 
+    
+
     def __init__(self, loginID):
         self.loginID = loginID
-        self.accdbfilepath = 'Data.csv'
-        self.storedhash = None
+        self.accdbfilepath = 'Data.csv' #check if path is ok?
+        self.storedpw = None
         
 
     def loginID_exists(self) -> bool:
@@ -21,7 +25,7 @@ class Account(ABC):
                 row = next(entry, None) #["loginID", "password"] #first row/header
                 for row in file:
                     if row and row[0] == self.loginID:
-                        self.storedhash = row[1]
+                        self.storedpw = row[1]
                         return True
             return False 
             #create account pop up
@@ -31,12 +35,12 @@ class Account(ABC):
         
     #input_passwprd - get pw that is entered by user
     def pw_verification(self, input_password) -> bool:
-        if not self.storedhash:
+        if not self.storedpw:
             return False
         try: 
             return bcrypt.checkpw(
                 input_password.encode("utf-8"),
-                self.storedhash.encode("utf-8")
+                self.storedpw.encode("utf-8")
             )
         
         except Exception as e:
