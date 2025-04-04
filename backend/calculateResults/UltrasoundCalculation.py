@@ -62,7 +62,7 @@ class UltrasoundCalculation:
         """
         path_to_csv = Path(__file__).parent.parent / "data/uploadedData.csv"
         df = pd.read_csv(path_to_csv)
-        print(df)
+        # print(df)
         encoded_image = df.get('Ultrasound Image')[0]
         if encoded_image is None:
             raise ValueError("CSV file does not contain 'Ultrasound Image' column.")
@@ -81,4 +81,4 @@ class UltrasoundCalculation:
 
 ultrasound_calc = UltrasoundCalculation()
 result = ultrasound_calc.predict()
-print(f"PCOS likelihood: {result:.2f}%")
+# print(f"PCOS likelihood: {result:.2f}%")

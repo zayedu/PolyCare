@@ -33,12 +33,42 @@ def UltrasoundUploadResults():
     return response
 
 @app.route('/BloodTestUploadResults', methods=['POST'])
+@cross_origin()
 def BloodTestUploadResults():
 
     incomingReq = request.get_json()
     uploadblood = discussBloodTest(incomingReq).uploadUserBloodTest()
 
     return uploadblood
+
+@app.route("/api/calculateLikelihood", methods=["POST"])
+@cross_origin()
+def calculate_likelihood():
+    from calculateResults.likelihood_calculation_service import LikelihoodCalculationService
+    
+    # Create a new instance of the service
+    lcs = LikelihoodCalculationService()
+    # Retrieve individual scores
+    symp_score = lcs.get_symptoms_score()
+    bt_score = lcs.get_blood_test_score()
+    us_score = lcs.get_ultrasound_score()
+    # Calculate overall likelihood
+    overall_score = lcs.receive_overall_score(symp_score, bt_score, us_score)
+    # Save the results to the "database"
+    lcs.sendToDB(overall_score, symp_score, bt_score, us_score)
+    return jsonify({"success": True, "message": "Likelihood calculated and stored."}) 
+
+@app.route("/api/getResults", methods=["GET"])
+@cross_origin()
+def get_results():
+    """
+    Returns the four scores, plus recommendation and lifestyle tips, in JSON format.
+    If no results exist, returns {"success": False, "message": "No results found"}.
+    """
+    from results_viewer_service import ResultsViewerService
+    rvs = ResultsViewerService()
+    results_data = rvs.get_results_and_recommendation()
+    return jsonify(results_data)
 
 if __name__ == "__main__":
     app.run(debug=True)

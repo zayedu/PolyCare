@@ -62,7 +62,7 @@ class discussUltrasound():
         Modifies: N/A
         Returns: 5 Symptoms inputted from user as a list
         """
-        print("Symptom upload request: ", self.incomingReq)
+        # print("Symptom upload request: ", self.incomingReq)
         sampleData =[]
 
         # TODO: actually parse request data into an array

@@ -4,6 +4,7 @@ import SymptomUploadScreen from "./SymptomUploadScreen";
 import UltrasoundUploadScreen from "./UltrasoundUploadScreen";
 import BloodUploadScreen from './BloodUploadScreen';
 import HomeScreen from "./HomeScreen";
+import ResultsViewerScreen from "./ResultsViewerServiceScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,10 @@ export default function Index() {
         options={{ headerTitleAlign: "center" }}
         component={BloodUploadScreen}
       />
+        <Stack.Screen
+          name="ResultsViewer"
+          component={ResultsViewerScreen}
+        />
     </Stack.Navigator>
   );
 }

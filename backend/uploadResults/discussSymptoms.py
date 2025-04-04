@@ -48,7 +48,7 @@ class discussSymptoms():
 
         # Parse request data into an array
         sampleData = incomingReq['response']
-        print(sampleData)
+        # print(sampleData)
         
         return sampleData
     

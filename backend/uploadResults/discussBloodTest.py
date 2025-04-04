@@ -52,7 +52,7 @@ class discussBloodTest():
         bileSalts = incomingReq['bileSalts']
 
         sampleData = [glucose, testosterone, bileSalts]
-        print(sampleData)
+        # print(sampleData)
         return sampleData
 
 

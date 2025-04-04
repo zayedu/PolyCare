@@ -56,7 +56,7 @@ class bloodCalculation():
 
     def runProbability(self):
         riskScore = self.calculatePCOSfromBT()
-        print(f"\nPCOS Probability: {riskScore}%")
+        # print(f"\nPCOS Probability: {riskScore}%")
         return riskScore
 
     
