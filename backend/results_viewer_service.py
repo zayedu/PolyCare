@@ -1,4 +1,4 @@
-from likelihood_calculation_service import LikelihoodCalculationService
+from calculateResults.likelihood_calculation_service import LikelihoodCalculationService
 
 class ResultsViewerService:
     def __init__(self):

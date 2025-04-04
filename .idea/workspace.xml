@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a245e21c-5acc-413e-b092-517059896722" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/UltrasoundAnalyzer/train_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/UltrasoundAnalyzer/train_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/calculateResults/UltrasoundCalculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/calculateResults/UltrasoundCalculation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/data/uploadedData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/backend/data/uploadedData.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/app/HomeScreen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/app/SymptomUploadScreen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/app/UltrasoundUploadScreen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/app/_layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/app/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/assets/fonts/SpaceMono-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/assets/images/adaptive-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/assets/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/assets/images/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/assets/images/partial-react-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/assets/images/react-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/assets/images/react-logo@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/assets/images/react-logo@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/assets/images/splash-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcos-app/tsconfig.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Flask Main" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/tensorflow/python/util/compat.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2umA2E27WisJybpuuEa0QX4iJ5m" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flask server.Flask (backend/UltrasoundAnalyzer/app.py).executor": "Run",
+    "Flask server.PolyCare.executor": "Run",
+    "Python.UltrasoundCalculation.executor": "Run",
+    "Python.api.executor": "Run",
+    "Python.compat.executor": "Run",
+    "Python.predict.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.train_model.executor": "Run",
+    "Python.ultrasoundCalculation.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "ultrasound",
+    "last_opened_file_path": "/Users/zayedumer/Documents/Personal-Projects/PolyCare/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/zayedumer/Documents/Personal-Projects/PolyCare/pcos-app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/calculateResults" />
+      <recent name="$PROJECT_DIR$/backend/uploadResults" />
+      <recent name="$PROJECT_DIR$/backend/UltrasoundAnalyzer" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a245e21c-5acc-413e-b092-517059896722" name="Changes" comment="" />
+      <created>1742843167268</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742843167268</updated>
+      <workItem from="1742843168757" duration="1580000" />
+      <workItem from="1742863214019" duration="607000" />
+      <workItem from="1743018591019" duration="5030000" />
+      <workItem from="1743024222497" duration="287000" />
+      <workItem from="1743024712968" duration="5047000" />
+      <workItem from="1743197566542" duration="584000" />
+      <workItem from="1743200651527" duration="3000" />
+      <workItem from="1743438633696" duration="8000" />
+      <workItem from="1743446537268" duration="3225000" />
+      <workItem from="1743449794814" duration="94000" />
+      <workItem from="1743449890256" duration="4127000" />
+      <workItem from="1743470727437" duration="1334000" />
+      <workItem from="1743610558971" duration="1255000" />
+      <workItem from="1743627214581" duration="1707000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PolyCare$ultrasoundCalculation.coverage" NAME="ultrasoundCalculation Coverage Results" MODIFIED="1743478380552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/calculateResults" />
+    <SUITE FILE_PATH="coverage/PolyCare$Flask__backend_UltrasoundAnalyzer_app_py_.coverage" NAME="Flask (backend/UltrasoundAnalyzer/app.py) Coverage Results" MODIFIED="1743105638572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/PolyCare$api.coverage" NAME="api Coverage Results" MODIFIED="1743478610312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/PolyCare$compat.coverage" NAME="compat Coverage Results" MODIFIED="1743023344702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/tensorflow/python/util" />
+    <SUITE FILE_PATH="coverage/PolyCare$test.coverage" NAME="test Coverage Results" MODIFIED="1743627484296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/PolyCare$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1743634797036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/UltrasoundAnalyzer" />
+    <SUITE FILE_PATH="coverage/PolyCare$discussUltrasound.coverage" NAME="discussUltrasound Coverage Results" MODIFIED="1743478717125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/uploadResults" />
+    <SUITE FILE_PATH="coverage/PolyCare$predict.coverage" NAME="predict Coverage Results" MODIFIED="1743024897839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/UltrasoundAnalyzer" />
+    <SUITE FILE_PATH="coverage/PolyCare$UltrasoundCalculation.coverage" NAME="UltrasoundCalculation Coverage Results" MODIFIED="1743635045783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/calculateResults" />
+  </component>
+</project>
