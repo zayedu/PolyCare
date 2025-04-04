@@ -60,11 +60,10 @@ class AccountLogin(Account):
             pass
         return None
 
-'''    
+    
 if __name__ == '__main__':
     user = AccountLogin('Sfwre12', '3rdYear!')
     print(user.login())
-'''
         
 
 
