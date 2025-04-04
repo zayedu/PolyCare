@@ -1,4 +1,6 @@
+from pathlib import Path
 from flask import json
+import pandas as pd
 import csv, requests, config
 
 class bloodCalculation():
@@ -13,11 +15,23 @@ class bloodCalculation():
         Description: reads latest blood test entry 
         """
 
+        bloodTests = []
+
         # NOTE: Harcoded to always return 2nd row of uploadedData.csv and assume first 5 columns are symptom responses
-        with open('data/uploadedData.csv', 'r') as csvfile:
-            row = list(csv.reader(csvfile))
-            lastRow = row[-1]
-            return{"glucose": float(lastRow[0]), "testosterone": float(lastRow[1]), "bileSalts": float(lastRow[2])}
+        # with open('data/uploadedData.csv', 'r') as csvfile:
+        #     row = list(csv.reader(csvfile))
+        #     lastRow = row[-1]
+        path_to_csv = Path(__file__).parent.parent / "data/uploadedData.csv"
+        df = pd.read_csv(path_to_csv)
+
+        bloodTest1 = df.get('Blood Test 1')[0]
+        bloodTest2 = df.get('Blood Test 2')[0]
+        bloodTest3 = df.get('Blood Test 3')[0]
+
+        if bloodTest1 is None:
+            raise ValueError("CSV file does not contain 'bloodTest1' column.")
+        
+        return{"glucose": float(bloodTest1), "testosterone": float(bloodTest2), "bileSalts": float(bloodTest3)}
         
     def calculatePCOSfromBT(self):
         glucose = self.userBloodTest["glucose"]

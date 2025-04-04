@@ -1,6 +1,8 @@
 from flask import json
 import csv
 
+import pandas as pd
+
 class discussBloodTest():
     """
     Description: Initializes 'discuss bloodtest' instance
@@ -21,27 +23,35 @@ class discussBloodTest():
         bloodTestData = self.parseRequest(self.incomingReq)
 
         # Currently hard coded to append data to uploadedData.csv
-        # NOTE: Expect first row of uploadedData.csv to be column names
-        # NOTE: Expect second row of uploadedData.csv to be blank line to write in row
-        # NOTE: After running this method, will need to clear uploadedData.csv to above expectations
-        with open('data/uploadedData.csv', 'a') as csvfile:
-            writer = csv.writer(csvfile, delimiter=",")
-            writer.writerow(bloodTestData)
+
+        # Load the CSV file
+        csv_path = 'data/uploadedData.csv'
+        df = pd.read_csv(csv_path)
+
+        # Ensure there's at least one row to modify
+        if df.empty:
+            return json.dumps({"error": "CSV file is empty. Cannot update data."})
+
+        # Update the first row of the 'Blood Test' columns
+        df.at[0, 'Blood Test 1'] = bloodTestData[0]
+        df.at[0, 'Blood Test 2'] = bloodTestData[1]
+        df.at[0, 'Blood Test 3'] = bloodTestData[2]
+
+        # Save the updated CSV
+        df.to_csv(csv_path, index=False)
 
         # After uploading data, create a message to notify front end (user)
-        message = json.dumps({"response": "Succesfully uploaded data"})
-        
+        message = json.dumps({"response": "Successfully uploaded data"})
         return message
     
     def parseRequest(self, incomingReq:json):
 
         # Parse request data into an array
-        
         glucose = incomingReq['glucose']
         testosterone = incomingReq['testosterone']
         bileSalts = incomingReq['bileSalts']
 
-        sampleData = ["", "", "", "", "", glucose, testosterone, bileSalts, ""]
+        sampleData = [glucose, testosterone, bileSalts]
         print(sampleData)
         return sampleData
 

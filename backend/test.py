@@ -1,8 +1,9 @@
 
 
 from flask import json
-from calculateResults.symptomCalculation import symptomCalculation
-from calculateResults.UltrasoundCalculation import UltrasoundCalculation
+from calculateResults.bloodCalculation import bloodCalculation
+# from calculateResults.symptomCalculation import symptomCalculation
+# from calculateResults.UltrasoundCalculation import UltrasoundCalculation
 
 #from calculateResults.UltrasoundCalculation import UltrasoundCalculation
 
@@ -16,6 +17,9 @@ from calculateResults.UltrasoundCalculation import UltrasoundCalculation
 #print("Probablity: ",symptomCalculation().calculatePCOSFromSymptom())
 
 # assume image stored in db already
-ultrasoundCalculation = UltrasoundCalculation()
-result = ultrasoundCalculation.predict()
-print(result)
+# ultrasoundCalculation = UltrasoundCalculation()
+# result = ultrasoundCalculation.predict()
+# print(result)
+
+# Test for calculating PCOS based off data stored in uploadData.csv
+print("Probablity: ",bloodCalculation().runProbability())
