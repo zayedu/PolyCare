@@ -1,5 +1,6 @@
 from flask import json
 import csv, requests, config
+import sys
 
 class symptomCalculation():
     """
@@ -23,6 +24,7 @@ class symptomCalculation():
 
         # NOTE: Harcoded to always return 2nd row of uploadedData.csv and assume first 5 columns are symptom responses
         with open('data/uploadedData.csv', 'r') as csvfile:
+            csv.field_size_limit(sys.maxsize)
             csvfiletoList = list(csv.reader(csvfile))
             responseList = (csvfiletoList[1])
 
@@ -86,21 +88,21 @@ class symptomCalculation():
         response = requests.post(API_URL, json=spec, headers=headers)
 
         if response.status_code == 200:
-            print("API Response:", response.json())
+            # print("API Response:", response.json())
             
             # parse llm response to find final content
             outputResponse = self.parseLlmOutput(response.json())
 
             # make sure llm response is a numerical value and not other text
             if not str(outputResponse).isdigit():
-                print("Response was successful but did not provide just a numerical probability")
+                # print("Response was successful but did not provide just a numerical probability")
                 return None
             else:
                 # if response is solely numerical value then convert response to type float
                 numericalProbability = float(outputResponse)
         
         else:
-            print("Failed. Status Code:", response.status_code)
+            # print("Failed. Status Code:", response.status_code)
             return None
         
         return numericalProbability
