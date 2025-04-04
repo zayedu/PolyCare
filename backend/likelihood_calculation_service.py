@@ -6,8 +6,8 @@ class LikelihoodCalculationService:
     
     def __init__(self):
         self.symp_calc = symptomCalculation()
-        self.bt_calc = bloodTestCalculation()
-        self.us_calc = ultrasoundCalculation()
+        self.bt_calc = bloodCalculation()
+        self.us_calc = UltrasoundCalculation()
         self.overall_calc = OverallCalculation(symptom_weight=0.2, blood_test_weight=0.35, ultrasound_weight=0.45)
 
     def get_symptoms_score(self):
@@ -16,11 +16,11 @@ class LikelihoodCalculationService:
 
     def get_blood_test_score(self):
         # Retrieve the calculated blood test percentage from bloodTestCalculation
-        return self.bt_calc.get_result()
+        return self.bt_calc.runProbability()
 
     def get_ultrasound_score(self):
         # Retrieve the calculated ultrasound percentage from ultrasoundCalculation
-        return self.us_calc.get_result()
+        return self.us_calc.predict()
 
     def receive_overall_score(self, symp_score, bt_score, us_score):
         # Call OverallCalculation to get the overall probability based on the three scores
