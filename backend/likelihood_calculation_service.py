@@ -1,6 +1,7 @@
 import pandas as pd
 from pathlib import Path
 from calculateResults import symptomCalculation
+from overall_calculation import OverallCalculation
 
 class LikelihoodCalculationService:
     
@@ -27,7 +28,7 @@ class LikelihoodCalculationService:
         return self.overall_calc.calculate_overall_probability(symp_score, bt_score, us_score)
 
     def sendToDB(self, overall_score, symp_score, bt_score, us_score):
-        file_path = Path("path/to/excel.xlsx")
+        file_path = Path("backend/data/PCOSLikelihoodDB.xlsx")
         
         # Check if the file exists; if not, create a new DataFrame
         if file_path.exists():
@@ -54,7 +55,7 @@ class LikelihoodCalculationService:
         Ordered as: [SymptomScore, BloodTestScore, UltrasoundScore, OverallScore]
         """
 
-        file_path = Path("path/to/excel.xlsx")
+        file_path = Path("backend/data/PCOSLikelihoodDB.xlsx")
         if not file_path.exists():
             # If file doesn't exist yet, nothing to return
             return []
