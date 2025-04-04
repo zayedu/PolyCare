@@ -8,12 +8,12 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
         onPress={() => navigation.navigate("Symptom Upload Page")}
       />
       <Button
-        title="Upload Ultrasound"
-        onPress={() => navigation.navigate("Ultrasound Upload Page")}
-      />
-      <Button
         title="Upload Blood Test Results"
         onPress={() => navigation.navigate("Blood Test Upload Page")}
+      />
+      <Button
+        title="Upload Ultrasound"
+        onPress={() => navigation.navigate("Ultrasound Upload Page")}
       />
     </View>
   );
