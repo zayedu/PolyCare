@@ -1,5 +1,6 @@
 from flask import json
 import csv, requests, config
+import sys
 
 class symptomCalculation():
     """
@@ -23,6 +24,7 @@ class symptomCalculation():
 
         # NOTE: Harcoded to always return 2nd row of uploadedData.csv and assume first 5 columns are symptom responses
         with open('data/uploadedData.csv', 'r') as csvfile:
+            csv.field_size_limit(sys.maxsize)
             csvfiletoList = list(csv.reader(csvfile))
             responseList = (csvfiletoList[1])
 

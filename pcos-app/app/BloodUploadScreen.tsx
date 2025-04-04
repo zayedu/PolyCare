@@ -29,7 +29,6 @@ export default function BloodUploadScreen(){
 
     return (
         <View >
-            <Text>BloodTestUpload</Text>
             <TextInput
                 style={{height: 40, padding: 5}}
                 placeholder="Glucose Levels(mmol/L)"
@@ -52,4 +51,3 @@ export default function BloodUploadScreen(){
         </View>
     )
 }
-//

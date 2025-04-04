@@ -21,24 +21,32 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
   };
 
   return (
-    <View style={{ flex: 1, marginTop: 20, marginBottom: 20 }}>
-      <Button
-        title="Upload Symptom Results"
-        onPress={() => navigation.navigate("Symptom Upload Page")}
-      />
-      <Button
-        title="Upload Blood Test Results"
-        onPress={() => navigation.navigate("Blood Test Upload Page")}
-      />
-      <Button
-        title="Upload Ultrasound"
-        onPress={() => navigation.navigate("Ultrasound Upload Page")}
-      />
-      <Button
-        title="Get My Likelihood"
-        onPress={handleGetLikelihood}
-        color="#C96A86" // Using the Dark Variant color for the button
-      />
+    <View style={{ flex: 1, marginTop: 5}}>
+      <View style={{ marginBottom: 20, marginTop: 50}}>
+        <Button
+          title="Upload Symptom Results"
+          onPress={() => navigation.navigate("Symptom Upload Page")}
+        />
+      </View>
+      <View style={{ marginBottom: 20 }}>
+        <Button
+          title="Upload Blood Test Results"
+          onPress={() => navigation.navigate("Blood Test Upload Page")}
+        />
+      </View>
+      <View style={{ marginBottom: 20 }}>
+        <Button
+          title="Upload Ultrasound"
+          onPress={() => navigation.navigate("Ultrasound Upload Page")}
+        />
+      </View>
+      <View style={{ }}>
+        <Button
+          title="Get My Likelihood"
+          onPress={handleGetLikelihood}
+          color="#C96A86" // Using the Dark Variant color for the button
+        />
+      </View>
     </View>
   );
 }
