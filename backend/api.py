@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from likelihood_calculation_service import LikelihoodCalculationService
 from results_viewer_service import ResultsViewerService
 
 from uploadResults.discussSymptoms import discussSymptoms
@@ -18,7 +19,21 @@ def SymptomUploadResults():
     incomingReq = request.get_json()
     uploadsymptoms = discussSymptoms(incomingReq).uploadUserSymptom()
 
-    return uploadsymptoms 
+    return uploadsymptoms
+
+@app.route("/api/calculateLikelihood", methods=["POST"])
+def calculate_likelihood():
+    # Create a new instance of the service
+    lcs = LikelihoodCalculationService()
+    # Retrieve individual scores
+    symp_score = lcs.get_symptoms_score()
+    bt_score = lcs.get_blood_test_score()
+    us_score = lcs.get_ultrasound_score()
+    # Calculate overall likelihood
+    overall_score = lcs.receive_overall_score(symp_score, bt_score, us_score)
+    # Save the results to the "database"
+    lcs.sendToDB(overall_score, symp_score, bt_score, us_score)
+    return jsonify({"success": True, "message": "Likelihood calculated and stored."}) 
 
 @app.route("/api/getResults", methods=["GET"])
 def get_results():
