@@ -35,10 +35,10 @@ class ResultsViewerService:
         return {
             "success": True,
             "scores": {
-                "symptomScore": symptom_score,
-                "bloodTestScore": blood_test_score,
-                "ultrasoundScore": ultrasound_score,
-                "overallScore": overall_score,
+                "symptomScore": float(symptom_score),
+                "bloodTestScore": float(blood_test_score),
+                "ultrasoundScore": float(ultrasound_score),
+                "overallScore": float(overall_score),
                 "recommendation": recommendation,
                 "lifestyleTips": lifestyle_tips
             }
