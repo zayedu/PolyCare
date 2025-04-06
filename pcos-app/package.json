@@ -18,6 +18,8 @@
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/native": "^7.0.14",
+    "@rneui/base": "^4.0.0-rc.8",
+    "@rneui/themed": "^4.0.0-rc.8",
     "cors": "^2.8.5",
     "expo": "~52.0.40",
     "expo-blur": "~14.0.3",

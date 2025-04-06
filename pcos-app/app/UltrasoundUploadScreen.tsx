@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { View, Text, Button, Image, StyleSheet } from "react-native";
+import { View, StyleSheet, Image, ImageBackground } from "react-native";
+import { Text, Button } from "@rneui/themed";
+import { BlurView } from "expo-blur";
 import {
   launchImageLibrary,
   ImageLibraryOptions,
@@ -11,7 +13,7 @@ export default function UltrasoundUploadScreen() {
 
   const selectImage = () => {
     const options: ImageLibraryOptions = {
-      mediaType: "photo" as const, // Ensures mediaType is the literal "photo"
+      mediaType: "photo" as const,
       quality: 1,
     };
 
@@ -34,19 +36,14 @@ export default function UltrasoundUploadScreen() {
     }
 
     try {
-      // Fetch the local file and convert it to a Blob
       const fileResponse = await fetch(imageUri);
       const blob = await fileResponse.blob();
-
-      // Extract filename from the URI
       const uriParts = imageUri.split("/");
       const filename = uriParts[uriParts.length - 1];
 
       const formData = new FormData();
-      // Append the Blob to FormData (do not set headers manually)
       formData.append("image", blob, filename);
 
-      // Send the request to the Flask backend
       const response = await fetch(
         "http://127.0.0.1:5000/UltrasoundAnalyzer/UploadResults",
         {
@@ -57,13 +54,10 @@ export default function UltrasoundUploadScreen() {
 
       const data = await response.json();
       if (response.ok) {
-        setUploadResponse(
-          `Success: ${data.response} (Status: ${response.status})`
-        );
+        setUploadResponse(`Success: ${data.response}`);
       } else {
-        setUploadResponse(`Error: ${data.error} (Status: ${response.status})`);
+        setUploadResponse(`Error: ${data.error}`);
       }
-      console.log("Upload response:", data);
     } catch (error: any) {
       console.error("Upload error:", error);
       setUploadResponse(`Upload error: ${error.message || error}`);
@@ -71,38 +65,80 @@ export default function UltrasoundUploadScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Upload Ultrasound Image</Text>
-      <Button title="Select Image" onPress={selectImage} />
-      {imageUri && (
-        <Image source={{ uri: imageUri }} style={styles.imagePreview} />
-      )}
-      <Button title="Upload Image" onPress={uploadImage} />
-      {uploadResponse !== "" && (
-        <Text style={styles.responseText}>{uploadResponse}</Text>
-      )}
-    </View>
+    <ImageBackground
+      source={require("../assets/images/background.jpg")}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.overlay}>
+        <BlurView intensity={60} tint="dark" style={styles.blurContainer}>
+          <Text h3 style={styles.title}>
+            Upload Ultrasound
+          </Text>
+
+          <Button
+            title="Select Image"
+            icon={{ name: "image", type: "feather", color: "white" }}
+            buttonStyle={styles.button}
+            containerStyle={styles.buttonContainer}
+            onPress={selectImage}
+          />
+          {imageUri && (
+            <Image source={{ uri: imageUri }} style={styles.imagePreview} />
+          )}
+          <Button
+            title="Upload Image"
+            icon={{ name: "upload", type: "feather", color: "white" }}
+            buttonStyle={[styles.button, { backgroundColor: "#C96A86" }]}
+            containerStyle={styles.buttonContainer}
+            onPress={uploadImage}
+          />
+          {uploadResponse !== "" && (
+            <Text style={styles.responseText}>{uploadResponse}</Text>
+          )}
+        </BlurView>
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    padding: 20,
-    alignItems: "center",
+    width: "100%",
+    height: "100%",
     justifyContent: "center",
+    alignItems: "center",
   },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
+  overlay: {
+    flex: 1,
+    width: "100%",
+    backgroundColor: "rgba(0,0,0,0.4)",
+    padding: 20,
   },
+  blurContainer: { borderRadius: 20, padding: 20, alignItems: "center" },
+  title: { color: "white", fontSize: 26, fontWeight: "bold", marginBottom: 20 },
+  button: {
+    backgroundColor: "rgba(255,255,255,0.15)",
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "white",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+  },
+  buttonContainer: { width: "100%", marginVertical: 10 },
   imagePreview: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
+    borderRadius: 10,
     marginVertical: 20,
+    borderWidth: 1,
+    borderColor: "#E78EA9",
   },
   responseText: {
+    color: "#E78EA9",
     marginTop: 20,
     fontSize: 16,
+    textAlign: "center",
   },
 });

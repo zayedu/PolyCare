@@ -1,7 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  ScrollView,
+  StyleSheet,
+  ImageBackground,
+  ActivityIndicator,
+} from "react-native";
+import { Text, Card } from "@rneui/themed";
+import { BlurView } from "expo-blur";
 
-// Define interfaces for fetched data
 interface Scores {
   symptomScore: number;
   bloodTestScore: number;
@@ -17,19 +24,18 @@ interface ResultsData {
 }
 
 export default function ResultsViewerScreen() {
-  // Type the state with ResultsData interface
   const [resultsData, setResultsData] = useState<ResultsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/api/getResults')
-      .then(response => response.json())
+    fetch("http://127.0.0.1:5000/api/getResults")
+      .then((response) => response.json())
       .then((json: ResultsData) => {
         setResultsData(json);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         setError(err.message);
         setLoading(false);
       });
@@ -37,88 +43,137 @@ export default function ResultsViewerScreen() {
 
   if (loading) {
     return (
-      <View style={styles.container}>
-        <Text style={styles.message}>Loading...</Text>
-      </View>
+      <ImageBackground
+        source={require("../assets/images/background.jpg")}
+        style={styles.background}
+        resizeMode="cover"
+      >
+        <View style={styles.center}>
+          <ActivityIndicator size="large" color="#C96A86" />
+          <Text style={styles.loadingText}>Loading your results...</Text>
+        </View>
+      </ImageBackground>
     );
   }
 
-  // Check if data came back empty or flagged as failure
   if (!resultsData || !resultsData.success) {
     return (
-      <View style={styles.container}>
-        <Text style={styles.message}>No results available</Text>
-      </View>
+      <ImageBackground
+        source={require("../assets/images/background.jpg")}
+        style={styles.background}
+        resizeMode="cover"
+      >
+        <View style={styles.center}>
+          <Text style={styles.errorText}>No results available</Text>
+        </View>
+      </ImageBackground>
     );
   }
 
-  // Destructure the scores
   const {
     symptomScore,
     bloodTestScore,
     ultrasoundScore,
     overallScore,
     recommendation,
-    lifestyleTips
+    lifestyleTips,
   } = resultsData.scores!;
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Your PCOS Scores</Text>
-      <Text style={styles.scoreText}>Symptoms: {symptomScore}%</Text>
-      <Text style={styles.scoreText}>Blood Test: {bloodTestScore}%</Text>
-      <Text style={styles.scoreText}>Ultrasound: {ultrasoundScore}%</Text>
-      <Text style={styles.scoreText}>Overall: {overallScore}%</Text>
+    <ImageBackground
+      source={require("../assets/images/background.jpg")}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <BlurView intensity={60} tint="dark" style={styles.blurContainer}>
+          <Text h3 style={styles.title}>
+            Your PCOS Scores
+          </Text>
 
-      <Text style={styles.recommendation}>{recommendation}</Text>
+          <Card containerStyle={styles.card}>
+            <Text style={styles.score}>Symptoms Score: {symptomScore}%</Text>
+            <Text style={styles.score}>
+              Blood Test Score: {bloodTestScore}%
+            </Text>
+            <Text style={styles.score}>
+              Ultrasound Score: {ultrasoundScore}%
+            </Text>
+            <Text style={styles.overallScore}>
+              Overall Score: {overallScore}%
+            </Text>
+          </Card>
 
-      <Text style={styles.tipsHeader}>Lifestyle Tips</Text>
-      {lifestyleTips.map((tip: string, index: number) => (
-        <Text key={index} style={styles.tipText}>
-          • {tip}
-        </Text>
-      ))}
-    </View>
+          <Text h4 style={styles.sectionTitle}>
+            Recommendation
+          </Text>
+          <Text style={styles.text}>{recommendation}</Text>
+
+          <Text h4 style={styles.sectionTitle}>
+            Lifestyle Tips
+          </Text>
+          {lifestyleTips.map((tip, idx) => (
+            <Text key={idx} style={styles.text}>
+              • {tip}
+            </Text>
+          ))}
+        </BlurView>
+      </ScrollView>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    backgroundColor: '#F9E4EB', // Light Variant
-    padding: 16
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  header: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#C96A86', // Dark Variant
-    marginBottom: 16
+  scrollContainer: { flexGrow: 1, padding: 20 },
+  center: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.4)",
   },
-  scoreText: {
+  blurContainer: { borderRadius: 20, padding: 20, alignItems: "center" },
+  title: {
+    color: "white",
+    fontSize: 26,
+    fontWeight: "bold",
+    marginBottom: 20,
+    textAlign: "center",
+  },
+  card: {
+    width: "100%",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    borderColor: "rgba(255,255,255,0.2)",
+    borderWidth: 1,
+    borderRadius: 15,
+    marginVertical: 20,
+  },
+  score: {
+    color: "#E78EA9",
     fontSize: 16,
-    marginVertical: 4,
-    color: '#E78EA9' // Primary
+    marginVertical: 5,
+    textAlign: "center",
   },
-  recommendation: {
-    marginTop: 20,
-    fontSize: 16,
-    color: '#C96A86',
-    marginBottom: 10
-  },
-  tipsHeader: {
+  overallScore: {
+    color: "#C96A86",
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#C96A86',
+    fontWeight: "bold",
+    marginTop: 10,
+    textAlign: "center",
+  },
+  sectionTitle: {
+    color: "#E78EA9",
     marginTop: 20,
-    marginBottom: 8
+    marginBottom: 10,
+    fontWeight: "bold",
   },
-  tipText: {
-    fontSize: 16,
-    marginBottom: 4,
-    color: '#E78EA9'
-  },
-  message: {
-    fontSize: 18,
-    color: '#C96A86'
-  }
+  text: { color: "white", marginBottom: 5, textAlign: "center" },
+  loadingText: { color: "#E78EA9", fontSize: 18, marginTop: 10 },
+  errorText: { color: "#E78EA9", fontSize: 20, textAlign: "center" },
 });
