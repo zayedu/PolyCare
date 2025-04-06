@@ -5,26 +5,29 @@ import UltrasoundUploadScreen from "./UltrasoundUploadScreen";
 import BloodUploadScreen from "./BloodUploadScreen";
 import HomeScreen from "./HomeScreen";
 import ResultsViewerScreen from "./ResultsViewerServiceScreen";
+import LoginScreen from "./LoginScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function Index() {
   return (
-    <Stack.Navigator
-      initialRouteName="PCOS Home Page"
-      screenOptions={{
-        headerTransparent: true, // 👈 Transparent header
-        headerTintColor: "white", // White icons
-        headerTitle: "", // Turn text off completely
-        headerTitleAlign: "center",
-        headerTitleStyle: { fontWeight: "bold" },
-        headerShadowVisible: true, // 👈 Removes border/shadow under header
-      }}
-    >
+    <Stack.Navigator initialRouteName="Login Page">
+      <Stack.Screen
+        name="Login Page"
+        options={{ headerTitleAlign: "center" }}
+        component={LoginScreen}
+      />
       <Stack.Screen
         name="PCOS Home Page"
+        options={{
+          headerTransparent: true, // 👈 Transparent header
+          headerTintColor: "white", // White icons
+          headerTitle: "", // Turn text off completely
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontWeight: "bold" },
+          headerShadowVisible: true, // 👈 Removes border/shadow under header
+        }}
         component={HomeScreen}
-        options={{ title: "PCOS Home" }}
       />
       <Stack.Screen
         name="Symptom Upload Page"

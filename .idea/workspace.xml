@@ -5,23 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a245e21c-5acc-413e-b092-517059896722" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PolyCare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PolyCare.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/calculateResults/symptomCalculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/calculateResults/symptomCalculation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/data/PCOSLikelihoodDB.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/backend/data/PCOSLikelihoodDB.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/data/promptTemplate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/data/promptTemplate.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/data/uploadedData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/backend/data/uploadedData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/results_viewer_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/results_viewer_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploadResults/discussSymptoms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/uploadResults/discussSymptoms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcos-app/app/BloodUploadScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/app/BloodUploadScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcos-app/app/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/app/HomeScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcos-app/app/ResultsViewerServiceScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/app/ResultsViewerServiceScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcos-app/app/SymptomUploadScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/app/SymptomUploadScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcos-app/app/UltrasoundUploadScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/app/UltrasoundUploadScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcos-app/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/app/_layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/__init.py__" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/Data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/GovtIDs.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/UserType.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/__init.py__" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/account_login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/account_search.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/create_account.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/delete_acc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/example.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/account_system/account_system/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/data/highProbPCOS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/data/lowProbPCOS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pcos-app/app/LoginScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pcos-app/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/app/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcos-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcos-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pcos-app/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +74,7 @@
     "Python.train_model.executor": "Run",
     "Python.ultrasoundCalculation.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ultrasound",
+    "git-widget-placeholder": "Merging styling2",
     "last_opened_file_path": "/Users/zayedumer/Documents/Personal-Projects/PolyCare/backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -138,7 +138,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backend/api.py</url>
-          <line>69</line>
+          <line>70</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
