@@ -18,7 +18,7 @@ export default function BloodUploadScreen() {
     console.log(glucose, testosterone, bileSalts);
 
     try {
-      await fetch("http://127.0.0.1:5000/BloodTestUploadResults", {
+      await fetch("http://192.168.40.246:5000/BloodTestUploadResults", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -18,7 +18,7 @@ export default function SymptomUploadScreen() {
 
   const saveData = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/", {
+      const response = await fetch("http://192.168.40.246:5000/", {
         method: "GET",
       }).then((response) => response.json());
 
@@ -33,7 +33,7 @@ export default function SymptomUploadScreen() {
     console.log(listOfSymptoms);
 
     try {
-      await fetch("http://127.0.0.1:5000/SymptomUploadResults", {
+      await fetch("http://192.168.40.246:5000/SymptomUploadResults", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
