@@ -45,7 +45,7 @@ export default function UltrasoundUploadScreen() {
       formData.append("image", blob, filename);
 
       const response = await fetch(
-        "http://192.168.40.246:5000/UltrasoundAnalyzer/UploadResults",
+        "http://127.0.0.1:5000/UltrasoundAnalyzer/UploadResults",
         {
           method: "POST",
           body: formData,

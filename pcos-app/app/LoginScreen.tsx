@@ -16,7 +16,7 @@ export default function LoginScreen({ navigation }: { navigation: any }) {
   const loginAttempt = async () => {
     const listOfCredentials = [user, password];
     try {
-      const response = await fetch("http://192.168.40.246:5000/LoginAttempt", {
+      const response = await fetch("http://127.0.0.1:5000/LoginAttempt", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

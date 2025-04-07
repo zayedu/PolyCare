@@ -29,7 +29,7 @@ export default function ResultsViewerScreen() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("http://192.168.40.246:5000/api/getResults")
+    fetch("http://127.0.0.1:5000/api/getResults")
       .then((response) => response.json())
       .then((json: ResultsData) => {
         setResultsData(json);
