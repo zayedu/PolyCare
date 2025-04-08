@@ -89,7 +89,7 @@ class symptomCalculation():
 
         if response.status_code == 200:
             # print("API Response:", response.json())
-            
+
             # parse llm response to find final content
             outputResponse = self.parseLlmOutput(response.json())
 
@@ -100,13 +100,13 @@ class symptomCalculation():
             else:
                 # if response is solely numerical value then convert response to type float
                 numericalProbability = float(outputResponse)
-        
+
         else:
             # print("Failed. Status Code:", response.status_code)
             return None
-        
+
         return numericalProbability
-        
+
     def parseLlmOutput(self, apiResponse:json):
         # parse llm response to store actual response 
         outputResponse = dict(apiResponse)['choices'][0]['message']['content']
