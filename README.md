@@ -210,4 +210,8 @@ PolyCare is a group effort by:
 
 ## Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Q6II9GIoyKA" frameborder="0" allowfullscreen></iframe>
+<p align="center">
+  <a href="https://youtube.com/shorts/Q6II9GIoyKA?feature=share">
+    <img src="https://img.youtube.com/vi/Q6II9GIoyKA/0.jpg" alt="Watch the video" />
+  </a>
+</p>
