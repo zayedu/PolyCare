@@ -20,7 +20,7 @@ PolyCare is an innovative Android-based health application designed to provide a
   - [Architecture / Technical Overview](#architecture--technical-overview)
     - [Key Architectural Components](#key-architectural-components)
       - [Figures](#figures)
-        - [Figure 1: Analysis Class Diagram\*](#figure-1-analysis-class-diagram)
+        - [Figure 1: Analysis Class Diagram](#figure-1-analysis-class-diagram)
         - [Figure 2: Architectural Diagram](#figure-2-architectural-diagram)
         - [Figure 3: Detailed Class Diagram](#figure-3-detailed-class-diagram)
   - [Screenshots](#screenshots)
@@ -162,7 +162,7 @@ PolyCare’s internal structure follows a **blackboard architectural pattern**, 
 
 #### Figures
 
-##### Figure 1: Analysis Class Diagram\*
+##### Figure 1: Analysis Class Diagram
 
 ![Analysis Class Diagram](figures/AnalysisClassDiagram.png)
 
