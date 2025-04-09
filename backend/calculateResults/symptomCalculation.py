@@ -80,7 +80,7 @@ class symptomCalculation():
 
         # Specify llm model and input prompt string
         spec = {
-            "model": "deepseek/deepseek-chat:free",
+            "model": "nvidia/llama-3.1-nemotron-nano-8b-v1:free",
             "messages": [{"role": "user", "content": prompt}]
         }
 

@@ -200,10 +200,10 @@ The following deliverables provide comprehensive insights into PolyCare’s desi
 
 PolyCare is a group effort by:
 
+- [**Zayed Umer**](https://github.com/zayedu)
 - [**Maham Siddiqui**](https://github.com/MahamSid)
 - [**Jackson Beach**](https://github.com/JDBeach1503)
 - [**Amal Hamid**](https://github.com/amalhamid)
-- [**Zayed Umer**](https://github.com/zayedu)
 - [**Saad Salman**](https://github.com/mSaadSalman)
 
 ---

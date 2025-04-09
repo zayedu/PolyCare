@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, make_response
 from flask_cors import CORS, cross_origin
-from account_system.account_system.account_login import AccountLogin
+from account_system.account_login import AccountLogin
 from uploadResults.discussUltrasound import discussUltrasound
 from uploadResults.discussSymptoms import discussSymptoms
 from uploadResults.discussBloodTest import discussBloodTest
