@@ -1,4 +1,4 @@
-from account_system.account_system.auth import Account
+from auth import Account
 import csv
 
 class AccountLogin(Account):
