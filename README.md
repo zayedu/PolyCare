@@ -34,8 +34,8 @@ PolyCare is an innovative Android-based health application designed to provide a
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/MahamSid/3A04.git
-   cd 3A04
+   git clone https://github.com/zayedu/PolyCare.git
+   cd PolyCare
    git checkout SDK
    ```
 2. **Backend Setup:**
